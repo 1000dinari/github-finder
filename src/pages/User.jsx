@@ -7,13 +7,14 @@ import RepoList from "../components/repos/RepoList"
 // import RepoItem from "../components/repos/RepoItem"
 
 function User() {
-    const {getUser, user, loading, getUserRepos, repos} = useContext(GithubContext)
+    const {getUser, user, loading, getUserRepos} = useContext(GithubContext)
 
     const params = useParams()
 
     useEffect(()=>{
         getUser(params.login)
         getUserRepos(params.login)
+        // eslint-disable-next-line
     }, [])
 
     const {
